@@ -44,7 +44,6 @@ function loadLabeledImages() {
         const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/khanali454/face-d/main/labeled_images/${label}/${i}.jpg`)
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
-        console.log(descriptions);
       }
 
       return new faceapi.LabeledFaceDescriptors(label, descriptions)
